@@ -76,6 +76,14 @@ host_info() {
 	echo "----------------------------------"
 	Host=$(hostname)
 	echo "Hostname : $Host"
+	domain=$(domainname -d)
+	echo "DNS domain : $domain"
+	fully="${Host}.${domain}"
+	echo "Fully qualified domain name : $fully"
+	net_ip=$(hostname -I | awk '{print $1}')
+	echo "Network Address (IP) : $net_ip"
+	dns_ip=$(cat /etc/resolv.conf| grep name)
+	echo "DNS name servers (DNS IP) : $dns_ip"
 	enter_func
 }
 
