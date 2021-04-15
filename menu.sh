@@ -23,7 +23,7 @@ choice_func() {
 	read choice
 	if [ "$choice" = "1" ]; then
 		os_info
-	elif [ "$choice" = "2" ]; then #needs to be done still
+	elif [ "$choice" = "2" ]; then
 		host_info
 	elif [ "$choice" = "3" ]; then
 		net_info
@@ -148,6 +148,7 @@ usage() {
 
 proc() {
 	/bin/bash ./proc.sh
+	main
 }
 
 main
